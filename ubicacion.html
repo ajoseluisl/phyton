@@ -64,6 +64,15 @@
   <form name="form_reloj">
   <input type="text" name="reloj" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.form_reloj.reloj.blur()">
   </form>
+  <div id="current_date"></p>
+    <script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
+    </script>
+    
         <div class="edit">
         <img class="editable2"  src="imagenes/maps.jpg" alt="imagen not foud">
         </div>

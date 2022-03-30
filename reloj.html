@@ -66,6 +66,14 @@ function mueveReloj(){
 <form name="form_reloj">
 <input type="text" name="reloj" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.form_reloj.reloj.blur()">
 </form>
+<div id="current_date"></p>
+  <script>
+  date = new Date();
+  year = date.getFullYear();
+  month = date.getMonth() + 1;
+  day = date.getDate();
+  document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
+  </script>
 
 <h3>nuestra empresa se dedica a vender productos en linea de diferentes categorias, estamos ubicados en providencia y nuestros principales productos son electronicos </h3>
 <div class="row">
