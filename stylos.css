@@ -9,8 +9,75 @@ body {
     color: rgb(33, 18, 245);
    
   }
+.row{
+  background-color:#2255f0;
+  border: radius 50%;;
+}
 
-  .fondo{
+.buscar:hover input{
+  width: 350px;
 
-    background-color: aqua;
+    }
+    .buscar:hover i{
+      transform: rotate(-360deg);
+    }
+
+.buscar input{
+  outline: none;
+	box-sizing: border-box;
+	height: 60px;
+	width: 0px;
+	padding: 0 20px;
+	color: #000;
+	border-radius: 50px;
+	font-size: 20px;
+	border: 1px solid #D50000;
+	transition: all .7s ease;
+}
+::placeholder {
+	color: grey;
+}
+
+.btn {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 80px;
+	height: 80px;
+	background: #D50000;
+	line-height: 80px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.btn i {
+	font-size: 25px;
+	color: white;
+	line-height: 80px;
+	transition: all .7s ease;
+}
+.btn:hover{
+	background: #cc0000;
+}
+
+.boton{
+  background:#f5e50cb9;
+  color:rgb(10, 1, 1);
+
+}
+.boton:hover{
+  background-color: rgba(255, 0, 0, 0.664);
+}
+.row{
+  border: 1em solid #fff;
+  box-shadow:2px 2px 10px;
+  transition: all 1s;
+     -webkit-transition:webkit-transform 2.2s ease-in-out;
+  transition:transform 2.2s ease-in-out;
   }
+  .row :hover {
+    filter:grayscale(20);
+    transform: scale(1.1);
+      }
