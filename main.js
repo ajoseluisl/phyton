@@ -110,16 +110,3 @@ $(function(){
      $(".boton").click(function(){alert("Bienvenido al carro de compras")
      });
 
-
-'' 
-
-$(document).ready(function   () {
-
-.$('H1').html('HOLA MUNDO');
-
- });
-
-
-
-
-
