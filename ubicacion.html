@@ -50,5 +50,105 @@
         <h6>Horario de atencion : Lunes a Viernes :<b>9:00 - 18:00 hrs</b></h6>
         <p>Número de contacto:********</p>
         
-</body>
+
+
+
+
+
+        <header class="container">
+    
+          <style>
+          .warning {
+            color: red;
+          }
+          </style>
+        
+        <script src="./lib/jquery.js"></script>
+          <script src="./lib/jquery.mockjax.js"></script>
+          <script src="./lib/jquery.form.js"></script>
+          <script src="./dist/jquery.validate.js"></script>
+          <script>
+          jQuery(function() {
+            $.mockjax({
+              url: "login.action",
+              response: function(settings) {
+                var user = settings.data.match(/user=(.+?)($|&)/)[1],
+                  password = settings.data.match(/password=(.+?)($|&)/)[1];
+                if (password !== "pongameun7") {
+                  this.responseText = "contraseña incorrecta (debe ser pongameun7).";
+                  return;
+                }
+                this.responseText = "hola " + user + ", bienvenido bro.";
+              },
+              responseStatus: 200,
+              responseTime: 500
+            });
+        
+            // show a simple loading indicator
+            var loader = jQuery('<div id="loader"><img src="images/loading.gif" alt="loading..."></div>')
+              .css({
+                position: "relative",
+                top: "1em",
+                left: "25em",
+                display: "inline"
+              })
+              .appendTo("body")
+              .hide();
+            jQuery().ajaxStart(function() {
+              loader.show();
+            }).ajaxStop(function() {
+              loader.hide();
+            }).ajaxError(function(a, b, e) {
+              throw e;
+            });
+        
+            var v = jQuery("#form").validate({
+              submitHandler: function(form) {
+                jQuery(form).ajaxSubmit({
+                  target: "#result"
+                });
+              }
+            });
+        
+            jQuery("#reset").click(function() {
+              v.resetForm();
+            });
+          });
+          </script>
+        
+       
+        
+        
+        <body class="fondo  container  ">
+        
+
+          <hr>
+          <h1> ingresa </h1>
+
+
+        <div id="main">
+          <form method="post" class="cmxform" id="form" action="login.action">
+            <fieldset>
+              <legend>formulario de ingreso </legend>
+              <p>
+                <label for="user">Usuario</label>
+                <input id="user" name="user" title="Please enter your username (at least 3 characters)" class="required" minlength="3">
+              </p>
+              <p>
+                <label for="pass">contraseña</label>
+                <input type="password" name="password" id="password" class="required" minlength "5">
+              </p>
+              <p>
+                <input class="submit" type="submit" value="Login">
+              </p>
+            </fieldset>
+          </form>
+          <div id="result" class="warning">Ingresar</div>
+          <br>
+          <button id="reset">Reiniciar formulario</button>
+          <a href="home.html">Volver a la pagina principal</a>
+        </div>
+        
+
+      </body>
 </html>
